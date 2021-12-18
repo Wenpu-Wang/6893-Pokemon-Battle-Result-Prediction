@@ -21,20 +21,15 @@
 
    这行代码也不同：temp_list.append(((first-second).tolist()))，做差
 
-## TODO
+## 切换是否考虑宝可梦类型代码
 
 共四种情况：考虑/不考虑宝可梦属性，宝可梦数值做差/不做差 互相组合，Cross Validation, 用最好的参数来算test error，最后得出最佳的是哪一种方法
 
-1. TODO: 添加模型保存与读取功能，**具体在**模型训练那部分下面注释里
+在考虑/不考虑宝可梦属性的情况下，得到KNN，LDA，RF，SVM的准确率与保存模型，注释掉两行即可切换
 
-2. TODO: 在考虑/不考虑宝可梦属性的情况下，得到KNN，LDA，RF，SVM的准确率与保存模型，注释掉两行即可切换
+preprocess() 函数中，此两行**注释掉**就是**不考虑**宝可梦属性的模型，不进行补正
 
-   preprocess() 函数中，此两行**注释掉**就是**不考虑**宝可梦属性的模型，不进行补正
-
-   ```python
-           first[1] = first[1] * adv_coefficient
-           first[3] = first[3] * adv_coefficient
-   ```
-
-3. TODO: 宝可梦数值做差/不做差情况下，得到KNN，LDA，RF，SVM的准确率与保存模型，不同前缀文件对应数值是否做差
-
+```python
+        first[1] = first[1] * adv_coefficient
+        first[3] = first[3] * adv_coefficient
+```
