@@ -1,6 +1,6 @@
 # Pokémon Project
 
-## .ipynb命名及其代码差别
+## .ipynb命名及其代码对应内容
 
 两种文件差别在于两处，final_stats，和list append处，都在preprocess()函数内
 
