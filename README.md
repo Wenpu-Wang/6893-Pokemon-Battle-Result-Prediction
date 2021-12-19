@@ -9,6 +9,7 @@ The machine learning models code locate in the algorithm_code folder, the web UI
 ## Methodology
 
 Machine learning algorithms: KNN, LDA, Random Forest, SVM.
+
 Web UI: HTML, JSON, CSS, Django, Python.
 
 ## Datasets
