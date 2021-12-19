@@ -16,7 +16,7 @@ Web UI: HTML, JSON, CSS, Django, Python.
 
 Stored in the algorithm_code folder, see data descriptions in README.md under the same directory of datasets.
 
-## About training models
+## About Training Models
 
 ### Jupyter notebook files Naming and corresponding Code
 
@@ -41,7 +41,7 @@ differences of two kinds of files locate in: final_stats, list append (both in p
 
 ### Switching whether to consider Pokémons types
 
-4 situations in total: consider/ not consider Pokémons types，take difference of Pokémons attributes/combine Pokémons attributes into a vector , combining these two options so there are 2$\times$2 situations. 
+4 situations in total: consider/ not consider Pokémons types，take difference of Pokémons attributes/combine Pokémons attributes into a vector , combining these two options so there are 2 x 2 situations. 
 
 We use Cross Validation to find best parameters, then test with test data, to find the best model.
 
@@ -51,3 +51,7 @@ In preprocess() function, commenting these tow rows means not considering the Po
         first[1] = first[1] * adv_coefficient
         first[3] = first[3] * adv_coefficient
 ```
+## Contact Us
+Wenpu Wang: ww2569@columbia.edu
+Ruilin Fan: rf2756@columbia.edu
+Zikai Zhu: zz2765@columbia.edu
