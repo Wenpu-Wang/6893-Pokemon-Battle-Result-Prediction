@@ -1,13 +1,13 @@
 # datasets: 
-### Pokémon attributes (800 rows$\times$12 columns)
+### Pokémon attributes (800 rows x 12 columns)
 
 pokemon_use.csv: Contain the attributes of 800 Pokémons.
 
-### Pokémon battle result (50000 rows$\times$3 columns)
+### Pokémon battle result (50000 rows x 3 columns)
 
 combats.csv: Contain 50000 entries of battle results of Pokémon.
 
-### Pokémon advantage chart (18$\times$18)
+### Pokémon advantage chart (18 rows x 18 columns)
 
 advantage.csv: Contain the advantage coefficient in the matrix.
 
