@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon prediction refresh</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+
+<body>
+<div class="background">
+    <div class="background-mask"></div>
+<h1><strong>Pokémon Prediction</strong></h1>
+    <div class="surround">
+<!--<img id = 'pokemon-left' src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/898.png" alt="我的测试页面">-->
+<!--<img id = 'pokemon-right' src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/658.png" alt="我的测试页面">-->
+<div class="picture">
+    <img class = "first" id = "pokemon-left" src={{first_url}} alt="我的测试页面">
+    <img class = "second" id = "pokemon-right" src="../static/image/question-mark.jpg" alt="我的测试页面">
+</div>
+
+<span id="span-left" class="form">
+
+<h2 id = 'pokename1'> First Pokemon: {{first_poke_name}} </h2>
+
+</span>
+
+<span id="span-right" class="form">
+    <form action="/result2" method="get" class="form2">
+        {% csrf_token %}
+        <label for="second">Enter the second Pokémon: </label>
+        <input  name = 'pk2' type="text" id="second" class="name" list = 'pokes'><br>
+        <label for="second_level">Level: </label>
+        <input name = 'level2' type="number" id = 'second_level'>
+        <input type="submit" value="OK" class="Submit2">
+        <datalist id="pokes">
+            <option value="Pikachu"></option>
+            <option value="Charizard"></option>
+            <option value="Blastoise"></option>
+            <option value="Aron"></option>
+            <option value="Mewtwo"></option>
+            <option value="Eevee"></option>
+            <option value="Snorlax"></option>
+            <option value="Lunatone"></option>
+            <option value="Cacnea"></option>
+            <option value="Chimecho"></option>
+            <option value="Groudon"></option>
+            <option value="Arceus"></option>
+            <option value="Lucario"></option>
+            <option value="Zamazenta"></option>
+            <option value="Gardevoir"></option>
+        </datalist>
+    </form>
+</span>
+
+
+
+
+<div class="resultParas">
+    <button id = "start" onclick="battle_ani()">Battle!</button>
+    <p class="guesses"></p>
+    <p class="lastResult"></p>
+    <p class="lowOrHi"></p>
+</div>
+</div>
+</div>
+</body>
+</html>

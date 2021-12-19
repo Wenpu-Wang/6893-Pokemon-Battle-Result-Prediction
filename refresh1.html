@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon prediction refresh</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+
+<body>
+<div class="background">
+    <div class="background-mask"></div>
+<h1><strong>Pokémon Prediction</strong></h1>
+    <div class="surround">
+<!--<img id = 'pokemon-left' src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/898.png" alt="我的测试页面">-->
+<!--<img id = 'pokemon-right' src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/658.png" alt="我的测试页面">-->
+<div class="picture">
+    <img class = "first" id = "pokemon-left" src="../static/image/question-mark.jpg" alt="我的测试页面">
+    <img class = "second" id = "pokemon-right" src={{second_url}} alt="我的测试页面">
+</div>
+        <span id="span-left" class="form">
+        <form action="/result1" method="get"  class="form1">
+            {% csrf_token %}
+            <label for="first">Enter the first Pokémon: </label>
+            <input name = 'pk1' type="text" id="first" class="name" list="pokes"> <br>
+            <label for="first_level">Level: </label>
+            <input name = 'level1' type="number" id = 'first_level'>
+            <input type="submit" value="OK" class="Submit1">
+            <datalist id="pokes">
+                <option value="Pikachu"></option>
+            <option value="Charizard"></option>
+            <option value="Blastoise"></option>
+            <option value="Aron"></option>
+            <option value="Mewtwo"></option>
+            <option value="Eevee"></option>
+            <option value="Snorlax"></option>
+            <option value="Lunatone"></option>
+            <option value="Cacnea"></option>
+            <option value="Chimecho"></option>
+            <option value="Groudon"></option>
+            <option value="Arceus"></option>
+            <option value="Lucario"></option>
+            <option value="Zamazenta"></option>
+            <option value="Gardevoir"></option>
+            </datalist>
+        </form>
+</span>
+<span id="span-right" class="form">
+
+    <h2 id = 'pokename2'> First Pokemon: {{second_poke_name}} </h2>
+</span>
+
+
+
+<div class="resultParas">
+    <button id = "start" onclick="battle_ani()">Battle!</button>
+</div>
+
+</div>
+</div>
+</body>
+</html>
