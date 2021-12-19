@@ -53,5 +53,7 @@ In preprocess() function, commenting these tow rows means not considering the Po
 ```
 ## Contact Us
 Wenpu Wang: ww2569@columbia.edu
+
 Ruilin Fan: rf2756@columbia.edu
+
 Zikai Zhu: zz2765@columbia.edu
