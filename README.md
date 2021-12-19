@@ -1,33 +1,50 @@
-# Pokémon Project 6893
+# 6893-Big Data Analytics: Pokémon Battle Result Prediction
 
-## .ipynb命名及其代码对应内容
+## Introduction
 
-两种文件差别在于两处，final_stats，和list append处，都在preprocess()函数内
+Project of the course EECS-6893-Big Data Analytics, the goal of the project is to predict battle result of Pokémon, using machine learning algorithms, and build a web UI to predict Pokémon battle result. 
 
-1. plain_ 前缀的文件，使用两个宝可梦数值左右拼合为一个向量的形式，实际输入到模型的数据结构顺序为：
+The machine learning models code locate in the algorithm_code folder, the web UI code locate in the frontend_code folder.
+
+## Methodology
+
+Machine learning algorithms: KNN, LDA, Random Forest, SVM.
+Web UI: HTML, JSON, CSS, Django, Python.
+
+## Datasets
+
+Stored in the algorithm_code folder, see data descriptions in README.md under the same directory of datasets.
+
+## About training models
+
+### Jupyter notebook files Naming and corresponding Code
+
+differences of two kinds of files locate in: final_stats, list append (both in preprocess() function)
+
+1. "plain_" prefix files，combine two Pokémons attributes into a vector as features, the actual input data structure into the model is:
 
    ```python
    final_stats = ["HP1","Attack1","Defense1","Sp. Atk1","Sp. Def1","Speed1","Legendary1","HP2","Attack2",
                       "Defense2","Sp. Atk2","Sp. Def2","Speed2","Legendary2"]
    ```
 
-   这行代码也不同：temp_list.append((first.tolist()+second.tolist()))，拼合
+   another difference: temp_list.append((first.tolist()+second.tolist()))
 
-2. diff_前缀的文件，使用两个宝可梦数值做差的形式，实际输入到模型的数据结构顺序为：
+2. "diff_" prefix files, use the difference of two Pokémons attributes as features, the actual input data structure into the model is:
 
    ```python
    final_stats = ["HP","Attack","Defense","Sp. Atk","Sp. Def","Speed","Legendary"]
    ```
 
-   这行代码也不同：temp_list.append(((first-second).tolist()))，做差
+   another difference: temp_list.append(((first-second).tolist()))
 
-## 切换是否考虑宝可梦类型代码
+### Switching whether to consider Pokémons types
 
-共四种情况：考虑/不考虑宝可梦属性，宝可梦数值做差/不做差 互相组合，Cross Validation, 用最好的参数来算test error，最后得出最佳的是哪一种方法
+4 situations in total: consider/ not consider Pokémons types，take difference of Pokémons attributes/combine Pokémons attributes into a vector , combining these two options so there are 2$\times$2 situations. 
 
-在考虑/不考虑宝可梦属性的情况下，得到KNN，LDA，RF，SVM的准确率与保存模型，注释掉两行即可切换
+We use Cross Validation to find best parameters, then test with test data, to find the best model.
 
-preprocess() 函数中，此两行**注释掉**就是**不考虑**宝可梦属性的模型，不进行补正
+In preprocess() function, commenting these tow rows means not considering the Pokémons types: 
 
 ```python
         first[1] = first[1] * adv_coefficient
