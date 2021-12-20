@@ -51,9 +51,3 @@ In preprocess() function, commenting these tow rows means not considering the Po
         first[1] = first[1] * adv_coefficient
         first[3] = first[3] * adv_coefficient
 ```
-## Contact Us
-Wenpu Wang: ww2569@columbia.edu
-
-Ruilin Fan: rf2756@columbia.edu
-
-Zikai Zhu: zz2765@columbia.edu
