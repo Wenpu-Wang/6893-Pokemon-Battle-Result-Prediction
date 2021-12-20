@@ -1,10 +1,18 @@
 # 6893-Big Data Analytics: Pokémon Battle Result Prediction
 
+## Contents
+
+1. [Introduction](#introduction)
+2. [Methodology](#methodology)
+3. [Datasets](#datasets)
+4. [About Training Models](#about-training-models)
+5. [Contact us](#contact-us)
+
 ## Introduction
 
-Project of the course EECS-6893-Big Data Analytics, the goal of the project is to predict battle result of Pokémon, using machine learning algorithms, and build a web UI to predict Pokémon battle result. 
+Project of the course EECS-6893-Big Data Analytics, the goal of the project is to predict battle result of Pokémon, analyze the importance of using machine learning algorithms, and build a web UI to predict Pokémon battle result. 
 
-The machine learning models code locate in the algorithm_code folder, the web UI code locate in the frontend_code folder.
+The machine learning models code locates in the algorithm_code folder, the web UI code locates in the frontend_code folder.
 
 ## Methodology
 
@@ -18,7 +26,7 @@ Stored in the algorithm_code folder, see data descriptions in README.md under th
 
 ## About Training Models
 
-### Jupyter notebook files Naming and corresponding Code
+#### Jupyter notebook files Naming and corresponding Code
 
 differences of two kinds of files locate in: final_stats, list append (both in preprocess() function)
 
@@ -39,7 +47,7 @@ differences of two kinds of files locate in: final_stats, list append (both in p
 
    another difference: temp_list.append(((first-second).tolist()))
 
-### Switching whether to consider Pokémons types
+#### Switching whether to consider Pokémons types
 
 4 situations in total: consider/ not consider Pokémons types，take difference of Pokémons attributes/combine Pokémons attributes into a vector , combining these two options so there are 2 x 2 situations. 
 
@@ -51,3 +59,11 @@ In preprocess() function, commenting these tow rows means not considering the Po
         first[1] = first[1] * adv_coefficient
         first[3] = first[3] * adv_coefficient
 ```
+
+## Contact us
+
+Wenpu Wang: ww2569@columbia.edu
+
+Ruilin Fan: rf2756@columbia.edu
+
+Zikai Zhu: zz2765@columbia.edu
