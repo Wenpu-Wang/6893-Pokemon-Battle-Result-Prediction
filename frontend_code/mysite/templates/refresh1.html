@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon prediction refresh</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+
+<body>
+<div class="background">
+    <div class="background-mask"></div>
+<h1><strong>Pokémon Prediction</strong></h1>
+    <div class="surround">
+<!--<img id = 'pokemon-left' src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/898.png" alt="我的测试页面">-->
+<!--<img id = 'pokemon-right' src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/658.png" alt="我的测试页面">-->
+<div class="picture">
+    <img class = "first" id = "pokemon-left" src="../static/image/question-mark.jpg" alt="我的测试页面">
+    <img class = "second" id = "pokemon-right" src={{second_url}} alt="我的测试页面">
+</div>
+
+<span id="span-left" class="form">
+    <form action="/result1" method="get">
+        {% csrf_token %}
+        <label for="second">Enter the second Pokemon: </label>
+        <input formaction="result" name = 'pk1' type="text" id="first" class="name">
+        <input type="submit" value="OK" class="Submit1">
+    </form>
+</span>
+
+<span id="span-right" class="form">
+
+    <h2 id = 'pokename2'> First Pokemon: {{second_poke_name}} </h2>
+</span>
+
+
+
+<div class="resultParas">
+    <button id = "start" onclick="battle_ani()">Battle!</button>
+</div>
+
+</div>
+</div>
+</body>
+</html>

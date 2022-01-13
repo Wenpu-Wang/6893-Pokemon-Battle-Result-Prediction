@@ -20,47 +20,44 @@ Web UI: HTML, JSON, CSS, Django, Python.
 
 ## Datasets
 
-Stored in the algorithm_code folder, see data descriptions in README.md under the same directory of datasets.
+Stored in the algorithm_code folder for your convenience, see data descriptions in README.md under the same directory of datasets.
 
 ## Quick Start
 
-The machine learning models code locates in the algorithm_code folder, the web UI code locates in the frontend_code folder. For the algorithm code, there are two kinds files with different prefixes shown as below:
+The machine learning models code locates in the algorithm_code folder, the web UI code locates in the frontend_code folder. 
 
-#### Files Naming and corresponding Code
+### algorithm_code folder
 
-Differences of two kinds of files locate in: final_stats, list append (both in preprocess() function)
-
-**"plain_" prefix files**: combine two Pokémons attributes into a vector as features, the actual input data structure into the model is:
+"plain_" prefix files: combine two Pokémons attributes into a vector as features, the actual input data structure into the model is:
 
 ```python
 final_stats = ["HP1","Attack1","Defense1","Sp. Atk1","Sp. Def1","Speed1","Legendary1","HP2","Attack2",
                    "Defense2","Sp. Atk2","Sp. Def2","Speed2","Legendary2"]
-```
-
-```python
 temp_list.append((first.tolist()+second.tolist()))
 ```
 
-**"diff_" prefix files**: use the difference of two Pokémons attributes as features, the actual input data structure into the model is:
+"diff_" prefix files: use the difference of two Pokémons attributes as features, the actual input data structure into the model is:
 
 ```python
 final_stats = ["HP","Attack","Defense","Sp. Atk","Sp. Def","Speed","Legendary"]
-```
-
-```python
 temp_list.append(((first-second).tolist()))
 ```
 
-#### Switching whether to consider Pokémons types
-
-4 situations in total: consider/ not consider Pokémons types，take difference of Pokémons attributes/combine Pokémons attributes into a vector , combining these two options so there are 2 x 2 situations. We use Cross Validation to find best parameters, then test with test data, to find the best model.
-
-In preprocess() function, commenting these tow rows means not considering the Pokémons types: 
+To switch whether to consider Pokémons types, In preprocess() function, commenting these tow rows means not considering the Pokémons types: 
 
 ```python
 first[1] = first[1] * adv_coefficient
 first[3] = first[3] * adv_coefficient
 ```
+### frontend_code folder
+
+Run the command to start the server:
+
+```
+python manage.py runserver
+```
+
+An address should appear in your terminal, go to the address in your local machine's browser should take you to the web interface. There you can start playing around with the web app.
 
 ## Contact us
 

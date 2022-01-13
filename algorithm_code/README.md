@@ -1,4 +1,4 @@
-# datasets: 
+# Datasets: 
 ### Pokémon attributes (800 rows x 12 columns)
 
 pokemon_use.csv: Contain the attributes of 800 Pokémons.
